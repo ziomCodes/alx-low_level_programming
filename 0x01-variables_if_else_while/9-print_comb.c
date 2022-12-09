@@ -1,22 +1,25 @@
 #include <stdio.h>
 /**
  * main - main block doc
- * Description: All combinations of single digit numbers
- * separated with whitespaces and commas
- *
- * Return: 0 (Success)
+ * Description: Print all possible combinations fo single-digit numbers.
+ * Numbers must be separated by commas and a space.
+ * Return: 0
  */
 int main(void)
 {
-	int c;
+	int i = 0;
 
-	for (c = 0; c < 10; c++)
+	while (i < 10)
 	{
-	putchar(c + '0');
-	if (c < 9)
-	putchar(',');
-	putchar(' ');
+		putchar(i + '0');
+		if (i < 9)
+		{
+			putchar(44);
+			putchar(32);
+		}
+		i++;
 	}
 	putchar('\n');
+
 	return (0);
 }
