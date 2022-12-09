@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
-
-/* betty style doc for function main goes there */
+/* main - main block Description: Get a random number and print the number and if it is positive, negative, or zero */
 int main(void)
 {
 	int n;
@@ -22,4 +21,4 @@ int main(void)
 	printf("%d is negative\n", n);
 	}
 	return (0);
-}	
+}
