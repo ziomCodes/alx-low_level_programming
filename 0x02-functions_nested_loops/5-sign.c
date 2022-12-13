@@ -19,7 +19,7 @@ int print_sign(int n)
 	}
 	else
 	{
-		_putchar(-49);
+		_putchar('-1');
 		return (-1);
 	}
 }
