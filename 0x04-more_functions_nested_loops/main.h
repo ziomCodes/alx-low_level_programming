@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int _isupper(int c);
+int _isupper(int);
 
 #endif /* MAIN_H */
