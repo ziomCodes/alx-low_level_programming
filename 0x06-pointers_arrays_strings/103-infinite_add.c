@@ -13,41 +13,41 @@
 */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0;
-	int sum = 0;
-	int tens = 0;
-	int begin = 0;
-	int swap = 0;
+	int num = 0, num1 = 0, num2 = 0;
+	int _add = 0;
+	int _ten = 0;
+	int _start = 0;
+	int _change = 0;
 
-	while (n1[i] != 0)
-		i++;
-	while (n2[j] != 0)
-		j++;
-	i--;
-	j--;
-	if (i > size_r || j > size_r)
+	while (n1[num] != 0)
+		num++;
+	while (n2[num1] != 0)
+		num1++;
+	num--;
+	num1--;
+	if (num > size_r || num1 > size_r)
 		return (0);
-	for ( ; k < size_r; i--, j--, k++)
+	for ( ; num2 < size_r; num--, num1--, num2++)
 	{
-		sum = tens;
-		if (i >= 0)
-			sum += n1[i] - '0';
-		if (j >= 0)
-			sum += n2[j] - '0';
-		if (i < 0 && j < 0 && sum == 0)
+		_add = _ten;
+		if (num >= 0)
+			_add += n1[num] - '0';
+		if (num1 >= 0)
+			_add += n2[num1] - '0';
+		if (num < 0 && num1 < 0 && _add == 0)
 			break;
-		tens = sum / 10;
-		r[k] = sum % 10 + '0';
+		_ten = _add / 10;
+		r[num2] = _add % 10 + '0';
 	}
-	if (i >= 0 || j >= 0 || sum > 0)
+	if (num >= 0 || num1 >= 0 || _add > 0)
 		return (0);
-	r[k] = '\0';
-	k--;
-	for ( ; begin < k; k--, begin++)
+	r[num2] = '\0';
+	num2--;
+	for ( ; _start < num2; num2--, _start++)
 	{
-		swap = r[k];
-		r[k] = r[begin];
-		r[begin] = swap;
+		_change = r[num2];
+		r[num2] = r[_start];
+		r[_start] = _change;
 	}
 	return (r);
 }
