@@ -12,3 +12,5 @@ int ease(int num, int num1);
 int palind(char *c, int num);
 int is_palindrome(char *s);
 int getLen(char *c);
+int srch(char *x, char z, int num, int num1);
+int wildcmp(char *s1, char *s2);
