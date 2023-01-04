@@ -12,7 +12,7 @@ int is_prime_number(int n)
 		return (0);
 	if (n < 4)
 		return (1);
-	return (hai(n, 2));
+	return (ease(n, 2));
 }
 
 /**
