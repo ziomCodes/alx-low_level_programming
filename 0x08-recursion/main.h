@@ -9,3 +9,6 @@ int mend(int num, int num1);
 int sqroot(int num, int num1);
 int is_prime_number(int n);
 int ease(int num, int num1);
+int palind(char *c, int num);
+int is_palindrome(char *s);
+int getLen(char *c);
