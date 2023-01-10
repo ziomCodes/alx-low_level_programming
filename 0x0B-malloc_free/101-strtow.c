@@ -98,7 +98,7 @@ int len(char *str)
 	if (str != NULL)
 	{
 	while (str[l])
-	len++;
+	l++;
 	}
 	return (l);
 }
