@@ -13,14 +13,16 @@ char **strtow(char *str)
 {
 	char **split;
 	int i, j = 0, temp = 0, size = 0;
-	int words = numWord(str);
+	int words, stLen;
 
+	words = numWord(str);
+	stLen = len(str);
 	if (words == 0)
 		return (NULL);
 	split = (char **) malloc(sizeof(char *) * (words + 1));
 	if (split != NULL)
 	{
-	for (i = 0; i <= len(str) && words; i++)
+	for (i = 0; i <= stLen && words; i++)
 	{
 	if ((str[i] != ' ') && (str[i] != '\0'))
 	size++;
