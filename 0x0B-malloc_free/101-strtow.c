@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
 *strtow - splits a stirng into words
@@ -10,7 +12,8 @@
 char **strtow(char *str)
 {
 	char **split;
-	int i, j = 0, temp = 0, size = 0, words = numWord(str);
+	int i, j = 0, temp = 0, size = 0;
+	int words = numWord(str);
 
 	if (words == 0)
 		return (NULL);
