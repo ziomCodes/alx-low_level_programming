@@ -33,7 +33,7 @@ char *_strcopy(char *dest, char *src)
 	dest[num] = src[num];
 
 	dest[num] = '\0';
-	return (num);
+	return (dest);
 }
 
 
