@@ -1,80 +1,48 @@
 #include "dog.h"
 
-
 /**
-*_strlen - returns length of
-*a string
-*@str: string to be counted
-*Return: returns length of string
-*/
-int _strlen(char *str)
-{
-	int l = 0;
-
-	while (str)
-	l++;
-
-	return (l);
-}
-
-
-/**
-*_strcopy - copy string pointed by src
-*into dest variable
-*@dest:buffer storing string copy
-*@src: buffer storing string to copy
-*Return:returns copied string
-*/
-char *_strcopy(char *dest, char *src)
-{
-	int num = 0;
-
-	for (; src[num] ; num++)
-	dest[num] = src[num];
-
-	dest[num] = '\0';
-	return (dest);
-}
-
-
-
-
-/**
-*new_dog - creates a new dog
-*@name: name of new dog
-*@age: age of new dog
-*@owner: owner of new dog
-*Return: returns NULL
-*/
+ * new_dog - create a new dog
+ * @name: char string name
+ * @age: int age
+ * @owner: char string owner
+ * Return: pointer to new dog
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *d;
+	struct dog *doge;
+	int i, j, k;
+	char *n, *o;
 
-	if (name == NULL || age < 0 || owner == NULL)
-	return (NULL);
+	doge = malloc(sizeof(struct dog));
+	if (doge == NULL)
+		return (NULL);
 
-	d = malloc(sizeof(dog_t));
-	if (d == NULL)
-	return (NULL);
+	for (i = 0; name[i] != '\0'; i++)
+		;
+	for (j = 0; owner[j] != '\0'; j++)
+		;
 
-	d->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (d->name == NULL)
+	n = malloc(sizeof(char) * i + 1);
+	if (n == NULL)
 	{
-	free(d);
-	return (NULL);
+		free(doge);
+		return (NULL);
 	}
-
-	d->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (d->owner == NULL)
+	o = malloc(sizeof(char) * j + 1);
+	if (o == NULL)
 	{
-	free(d->name);
-	free(d);
-	return (NULL);
+		free(n);
+		free(doge);
+		return (NULL);
 	}
+	for (k = 0; k <= i; k++)
+		n[k] = name[k];
+	for (k = 0; k <= j; k++)
+		o[k] = owner[k];
 
-	d->name = _strcopy(d->name, name);
-	d->age = age;
-	d->owner = _strcopy(d->owner, owner);
+	doge->name = n;
+	doge->age = age;
+	doge->owner = o;
 
-	return (d);
+	return (doge);
 }
