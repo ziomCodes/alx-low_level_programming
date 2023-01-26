@@ -21,9 +21,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (!adng)
 		return (NULL);
 
-	new->str = strdup(str);
-	new->len = num;
-	new->next = NULL;
+	adng->str = strdup(str);
+	adng->len = num;
+	adng->next = NULL;
 
 	if (*head == NULL)
 	{
