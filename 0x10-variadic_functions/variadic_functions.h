@@ -15,6 +15,13 @@ void _printstr(va_list lst);
 void _printfloat(va_list lst);
 void _printint(va_list lst);
 
+/**
+ * struct prchk - struct file
+ * @type: pointer type
+ * @f: function f
+ *
+ * Description: struct file classes
+ */
 typedef struct prchk
 {
 	char *type;
