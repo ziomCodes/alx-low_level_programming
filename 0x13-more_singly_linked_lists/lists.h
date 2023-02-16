@@ -12,26 +12,12 @@
  * Description: singly linked list node structure
  *
  */
+
 typedef struct listint_s
 {
 int n;
 struct listint_s *next;
 } listint_t;
-
-/**
- * struct compare - singly linked list
- * @addr: points to address
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- *
- */
-
-typedef struct compare
-{
-	const void *addr;
-	struct compare *next;
-} po_list;
 
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
@@ -45,8 +31,6 @@ int sum_listint(listint_t *head);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
-void free_listN(po_list *head);
-po_list *new_nodelist(po_list **head, const void *addr);
 size_t print_listint_safe(const listint_t *head);
 
 #endif
